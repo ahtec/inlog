@@ -1,5 +1,4 @@
 <?php
-// Start the session
 session_start();
 require_once './versleutel.php';
 ?>
@@ -9,21 +8,25 @@ require_once './versleutel.php';
         <title>ITPH  ingelogd welkom </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+#welkom {
+text-align: center;
+border: 3px solid green;                
+}
+            
+        </style>
+        
     </head>
     <body>
-        <div>
+        <div id="welkom">
+            <img   src=https://www.caict.nl/uploads/nieuws/logo-itph-academy.jpg   width="100% "> 
             <?php
             $welkomstext = "Welkom ";
             $welkomstext .= $_SESSION['naam'];
             $welkomstext .= " met wachtwoord :  ";
-            $welkomstext .= ontSleutel($_SESSION['ww']);
-
-
+            $welkomstext .= $_SESSION['ww'];
             echo "<h2> $welkomstext ";
-            
-            
             ?>
-            <img   src=https://www.itph-facilitycenters.nl/assets/upload/default_logo/logo.png >
 
         </div>
     </body>

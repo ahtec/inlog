@@ -9,11 +9,12 @@ $returnText = "";
 
 $naam = $_REQUEST['naam'];
 $ww = $_REQUEST['ww'];
-$ww = verSleutel($ww);
 
 
 $_SESSION["naam"] = $naam;
 $_SESSION["ww"] = $ww;
+
+$ww = verSleutel($ww);
 
 print_r($_SESSION);
 $connectie = new mysqli(DBSERVER, DBUSER, DBPASS, DBASE);
@@ -42,3 +43,4 @@ if (!$connectie->connect_error) {
     header("Location: index.php?errorTxt=$errorTxt ");
 }
 
+?>
