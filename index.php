@@ -5,6 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <title>ITPH inlog</title>
+        <link rel = "stylesheet" type = "text/css" href="deCss.css">  
         <script>
 
             function inloggenValidate(form) {
@@ -57,14 +58,14 @@
                 echo "<h2> " . $errorTxt . "</h2> ";
                 echo "</p>";
                 if ($errorTxt == "Naam bestaat niet") {
-                    echo "<button onclick=javascript:document.location='insertPersoon.php'; >  Voeg ".$_SESSION['naam']." toe </button>";
+                    echo "<button id=naambestaatalKnop onclick=javascript:document.location='insertPersoon.php'; >  Voeg ".$_SESSION['naam']." toe   </button>";
                 }
             }
         }
 
         ?>
 
-        <form   action="checkPersoonExist.php" onsubmit="return inloggenValidate(this)" method="POST">
+        <form   action="checkPersoonExist.php" onsubmit="return inloggenValidate(this)"   method="POST">
             <table>
 <?php
 if ( isset($_SESSION['naam']) ) {
@@ -81,7 +82,7 @@ if ( isset($_SESSION['ww']) ) {
 
 //echo "<tr> <td>  uw  wachtwoord   </td> <td>    <input type=password name=ww id=ww  value=" .$_SESSION['ww']   .">    </td> </tr>";
 ?>
-            <tr> <td>                         </td> <td>    <input type=submit   value=Verstuur id="loginKnop">   </td> </tr>
+            <tr> <td>                         </td> <td>    <input type=submit   value=Login id="loginKnop">   </td> </tr>
             </table>
 
         </form>

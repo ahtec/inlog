@@ -5,6 +5,8 @@ session_start();
 <html>
     <head>
         <title>Invoeren persoon</title>  
+        <link rel = "stylesheet" type = "text/css" href="deCss.css">  
+        
     </head>
     <h2> Invoeren persoon</h2>
     <hr>
@@ -32,7 +34,7 @@ session_start();
                             <input type="radio" name="gender" value="female">       Female<br>
                         </td>
                     <br>
-                    <input type="submit" value="bewaar persoon" id="bewaarpersoon">
+                    <input type="submit" value="bewaar persoon" id=naambestaatalKnop">
                 </form> 
     </table>
 
