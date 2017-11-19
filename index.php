@@ -9,7 +9,6 @@
         <script>
 
             function inloggenValidate(form) {
-//            return true;
                 fail = inloggenValidateNaam(form.naam.value)
                 fail += inloggenValidateWW(form.ww.value)
 
@@ -35,11 +34,6 @@
 
             function inloggenValidateWW(field)
             {
-                //                alert(field);
-//            var pattern = new RegExp(/[()~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/); //unacceptable chars
-                //          if (pattern.test(field)) {
-                //               return ("Gebruik alleen alpha en numerieke characters");
-                //           }
                 if (field == "") {
                     return "Vul wachtwoord in  ";
                 }
@@ -71,18 +65,16 @@
 if ( isset($_SESSION['naam']) ) {
     echo "<tr> <td>  uw user login naam </td> <td>  <input type=text name=naam   id=naam value=".$_SESSION['naam'] .">    </td>  </tr>";
 }  else {
-    echo "<tr> <td>  uw user login naam </td> <td>  <input type=text name=naam   id=naam    </td> </tr> ";
+    echo "<tr> <td>  uw user login naam </td> <td>  <input type=text name=naam   id=naam     </td> </tr> ";
 }
 
 if ( isset($_SESSION['ww']) ) {
     echo "<tr> <td>  uw  wachtwoord   </td> <td>    <input type=password name=ww id=ww  value=" .$_SESSION['ww']   .">    </td> </tr>";
 } else {
-    echo "<tr> <td>  uw  wachtwoord   </td> <td>    <input type=password name=ww       id=ww     </td> </tr>";
+    echo "<tr> <td>  uw  wachtwoord   </td> <td>    <input type=password name=ww  id=ww       </td> </tr>";
 }
-
-//echo "<tr> <td>  uw  wachtwoord   </td> <td>    <input type=password name=ww id=ww  value=" .$_SESSION['ww']   .">    </td> </tr>";
 ?>
-            <tr> <td>                         </td> <td>    <input type=submit   value=Login id="loginKnop">   </td> </tr>
+            <tr> <td>     </td> <td>    <input type=submit   value=Login id="loginKnop">   </td> </tr>
             </table>
 
         </form>

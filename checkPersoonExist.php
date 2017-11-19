@@ -8,15 +8,15 @@ require_once 'loginGegevens.php';
 $returnText = "";
 
 $naam = $_REQUEST['naam'];
-$ww = $_REQUEST['ww'];
+$ww   = $_REQUEST['ww'];
 
 
 $_SESSION["naam"] = $naam;
-$_SESSION["ww"] = $ww;
+$_SESSION["ww"]   = $ww;
 
 $ww = verSleutel($ww);
 
-print_r($_SESSION);
+//print_r($_SESSION);
 $connectie = new mysqli(DBSERVER, DBUSER, DBPASS, DBASE);
 if (!$connectie->connect_error) {
     $sql = sprintf("SELECT * FROM personen WHERE naam = '%s' and ww = '%s'", $naam, $ww);
@@ -39,8 +39,8 @@ if (!$connectie->connect_error) {
     }
 //    $connectie.close();
 } else {
-    $returnText = "Connectie error";
-    header("Location: index.php?errorTxt=$errorTxt ");
+    $returnText = "Connectie error<BR> database probleem";
+    header("Location: index.php?errorTxt=$returnText ");
 }
 
 ?>
